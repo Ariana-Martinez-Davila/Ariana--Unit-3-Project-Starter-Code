@@ -1,0 +1,161 @@
+<!DOCTYPE html> <html><head>
+        <title>Ariana - Unit 3 Project Starter Code</title>
+    <style>body {
+    text-align: center;
+   
+    background-color:white;
+   
+    color: black;
+}
+
+img {
+    width: 350px;
+}
+
+.title {
+    font-size: 60px;
+    font-weight: 800;
+    color:red;
+}
+
+.name-button {
+    height: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.restart-button {
+    justify-content: center;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+button {
+    height: 40px;
+}
+
+
+h1 {
+    font-size: 60px;
+    color: black;
+}
+
+
+
+.option-one-screen {
+    display: none;
+}
+
+.option-two-screen {
+    display: none;
+}
+
+.option-one-one-end {
+    display: none;
+}
+
+.option-one-two-end {
+    display: none;
+}</style></head>
+    <body>
+       
+        <div class="title">Home Alone </div>
+        <button class="restart-button">Restart?</button>
+        <div class="story-opening">
+             <img src="https://cdn1.epicgames.com/ue/product/Screenshot/Gallary01-1920x1080-ce7d47ff19cd37bbef42ee41a4ebbd44.JPG?resize=1&amp;w=1920">
+            <br>
+            <label>User?</label>
+            <div>
+                <input class="name-input">
+                <button class="name-button">Submit</button>
+            </div>
+            <h1> You're home alone and you hear the phone ring</h1>
+            <h1 class="opening-text">are you afraid to ansewr</h1>
+            <div class="buttons">
+                <button class="option-one">Lead it to voicemail.</button>
+                <button class="option-two">Answer?</button>
+            </div>
+        </div>
+        <div class="option-one-screen">
+            <h1>You ignored the phone and it begins to ring once again.</h1>
+            <img src="https://okcredit-blog-images-prod.storage.googleapis.com/2021/07/answeringcallsprofessionally3.jpg">
+        
+            <div class="buttons-option-one">
+                <button class="option-one-one">Answer?</button>
+                <button class="option-one-two">Ignore</button>
+            </div>
+        </div>
+        <div class="option-one-one-end">
+            <h1 style="color: red">...</h1>
+            <p> On the final ring, a strange man answers. All you hear is "Behind you." In that momment you realize you are no longer home alone.</p>
+            <img src="https://t4.ftcdn.net/jpg/00/60/08/19/360_F_60081908_4Lrxu8hIGZkT8dNOFqGD3qDuzWwYMc6G.jpg">
+        </div>
+        <div class="option-two-screen">
+            <h1 style="color: red">Good choice!</h1>
+            <p>A man you don't recognize answers the phone. You threaten him and he gets arrested. YOU SURVIVED THE NIGHT </p>
+            <img src="https://www.gannett-cdn.com/presto/2019/02/06/PBUC/4ec8e46d-d782-48db-99be-43a1fbd8e53c-Leesville_Rd_arrest_1_1.jpg?width=660&amp;height=495&amp;fit=crop&amp;format=pjpg&amp;auto=webp">
+        </div>
+        
+        <div class="option-one-two-end">
+            <h1 style="color: red">Game Over.</h1>
+            <p>You ignored all the phone calls and decided to play video games instead if ony you listened the first time. What. A. Shame.</p>
+            
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYyEAUy6ogEP8uTzOXMr-mDcBzMf-i_3fVEQg5d1tQiXcWkeyr3d1cfWbDtIKY8N5kGHs&amp;usqp=CAU">
+        </div>
+    
+<script>
+/*__POPCODESTART__*/
+var Button1 = document.querySelector(".option-one");
+var Button2 = document.querySelector(".option-two");
+var Screen1 = document.querySelector(".option-one-screen");
+var Screen2 = document.querySelector(".option-two-screen");
+var StoryOP = document.querySelector(".story-opening");
+var OP1Button = document.querySelector(".option-one-one");
+var OP2Button = document.querySelector(".option-one-two");
+var OP1ScreenEnd = document.querySelector(".option-one-one-end");
+var OP2ScreenEnd = document.querySelector(".option-one-two-end");
+var NameInput = document.querySelector(".name-input");
+var NameButton = document.querySelector(".name-button");
+var opText = document.querySelector(".opening-text");
+var ReButton = document.querySelector(".restart-button");
+
+NameButton.onclick = function () {
+  opText.innerHTML = "".concat(NameInput.value, " are you afraid to answer?");
+};
+
+Button1.onclick = function () {
+  StoryOP.style.display = "none";
+  Screen1.style.display = "block";
+};
+
+Button2.onclick = function () {
+  StoryOP.style.display = "none";
+  Screen2.style.display = "block";
+};
+
+OP1Button.onclick = function () {
+  Screen1.style.display = "none";
+  OP1ScreenEnd.style.display = "block";
+};
+
+OP2Button.onclick = function () {
+  Screen1.style.display = "none";
+  OP2ScreenEnd.style.display = "block";
+};
+
+ReButton.onclick = function () {
+  StoryOP.style.display = "block";
+  Screen1.style.display = "none";
+  Screen2.style.display = "none";
+  OP1ScreenEnd.style.display = "none";
+  OP2ScreenEnd.style.display = "none";
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbIkJ1dHRvbjEiLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJCdXR0b24yIiwiU2NyZWVuMSIsIlNjcmVlbjIiLCJTdG9yeU9QIiwiT1AxQnV0dG9uIiwiT1AyQnV0dG9uIiwiT1AxU2NyZWVuRW5kIiwiT1AyU2NyZWVuRW5kIiwiTmFtZUlucHV0IiwiTmFtZUJ1dHRvbiIsIm9wVGV4dCIsIlJlQnV0dG9uIiwib25jbGljayIsImlubmVySFRNTCIsInZhbHVlIiwic3R5bGUiLCJkaXNwbGF5Il0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxPQUFPLEdBQUdDLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixhQUF2QixDQUFkO0FBQ0EsSUFBSUMsT0FBTyxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsYUFBdkIsQ0FBZDtBQUNBLElBQUlFLE9BQU8sR0FBR0gsUUFBUSxDQUFDQyxhQUFULENBQXVCLG9CQUF2QixDQUFkO0FBQ0EsSUFBSUcsT0FBTyxHQUFHSixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsb0JBQXZCLENBQWQ7QUFDQSxJQUFJSSxPQUFPLEdBQUdMLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixnQkFBdkIsQ0FBZDtBQUNBLElBQUlLLFNBQVMsR0FBR04sUUFBUSxDQUFDQyxhQUFULENBQXVCLGlCQUF2QixDQUFoQjtBQUNBLElBQUlNLFNBQVMsR0FBR1AsUUFBUSxDQUFDQyxhQUFULENBQXVCLGlCQUF2QixDQUFoQjtBQUNBLElBQUlPLFlBQVksR0FBR1IsUUFBUSxDQUFDQyxhQUFULENBQXVCLHFCQUF2QixDQUFuQjtBQUNBLElBQUlRLFlBQVksR0FBR1QsUUFBUSxDQUFDQyxhQUFULENBQXVCLHFCQUF2QixDQUFuQjtBQUNBLElBQUlTLFNBQVMsR0FBR1YsUUFBUSxDQUFDQyxhQUFULENBQXVCLGFBQXZCLENBQWhCO0FBQ0EsSUFBSVUsVUFBVSxHQUFHWCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsY0FBdkIsQ0FBakI7QUFDQSxJQUFJVyxNQUFNLEdBQUdaLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixlQUF2QixDQUFiO0FBQ0EsSUFBSVksUUFBUSxHQUFHYixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsaUJBQXZCLENBQWY7O0FBRUFVLFVBQVUsQ0FBQ0csT0FBWCxHQUFxQixZQUFXO0FBQzVCRixFQUFBQSxNQUFNLENBQUNHLFNBQVAsYUFBc0JMLFNBQVMsQ0FBQ00sS0FBaEM7QUFDSCxDQUZEOztBQUtBakIsT0FBTyxDQUFDZSxPQUFSLEdBQWtCLFlBQVc7QUFDekJULEVBQUFBLE9BQU8sQ0FBQ1ksS0FBUixDQUFjQyxPQUFkLEdBQXdCLE1BQXhCO0FBQ0FmLEVBQUFBLE9BQU8sQ0FBQ2MsS0FBUixDQUFjQyxPQUFkLEdBQXdCLE9BQXhCO0FBQ0gsQ0FIRDs7QUFLQWhCLE9BQU8sQ0FBQ1ksT0FBUixHQUFrQixZQUFXO0FBQ3pCVCxFQUFBQSxPQUFPLENBQUNZLEtBQVIsQ0FBY0MsT0FBZCxHQUF3QixNQUF4QjtBQUNBZCxFQUFBQSxPQUFPLENBQUNhLEtBQVIsQ0FBY0MsT0FBZCxHQUF3QixPQUF4QjtBQUNILENBSEQ7O0FBS0FaLFNBQVMsQ0FBQ1EsT0FBVixHQUFvQixZQUFXO0FBQzNCWCxFQUFBQSxPQUFPLENBQUNjLEtBQVIsQ0FBY0MsT0FBZCxHQUF3QixNQUF4QjtBQUNBVixFQUFBQSxZQUFZLENBQUNTLEtBQWIsQ0FBbUJDLE9BQW5CLEdBQTZCLE9BQTdCO0FBQ0gsQ0FIRDs7QUFJQVgsU0FBUyxDQUFDTyxPQUFWLEdBQW9CLFlBQVc7QUFDM0JYLEVBQUFBLE9BQU8sQ0FBQ2MsS0FBUixDQUFjQyxPQUFkLEdBQXdCLE1BQXhCO0FBQ0FULEVBQUFBLFlBQVksQ0FBQ1EsS0FBYixDQUFtQkMsT0FBbkIsR0FBNkIsT0FBN0I7QUFDSCxDQUhEOztBQUtBTCxRQUFRLENBQUNDLE9BQVQsR0FBbUIsWUFBVztBQUMxQlQsRUFBQUEsT0FBTyxDQUFDWSxLQUFSLENBQWNDLE9BQWQsR0FBd0IsT0FBeEI7QUFDQWYsRUFBQUEsT0FBTyxDQUFDYyxLQUFSLENBQWNDLE9BQWQsR0FBd0IsTUFBeEI7QUFDQWQsRUFBQUEsT0FBTyxDQUFDYSxLQUFSLENBQWNDLE9BQWQsR0FBd0IsTUFBeEI7QUFDQVYsRUFBQUEsWUFBWSxDQUFDUyxLQUFiLENBQW1CQyxPQUFuQixHQUE2QixNQUE3QjtBQUNBVCxFQUFBQSxZQUFZLENBQUNRLEtBQWIsQ0FBbUJDLE9BQW5CLEdBQTZCLE1BQTdCO0FBQ0gsQ0FORCIsInNvdXJjZXNDb250ZW50IjpbImxldCBCdXR0b24xID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5vcHRpb24tb25lXCIpO1xubGV0IEJ1dHRvbjIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm9wdGlvbi10d29cIik7XG5sZXQgU2NyZWVuMSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3B0aW9uLW9uZS1zY3JlZW5cIik7XG5sZXQgU2NyZWVuMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3B0aW9uLXR3by1zY3JlZW5cIik7XG5sZXQgU3RvcnlPUCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuc3Rvcnktb3BlbmluZ1wiKTtcbmxldCBPUDFCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm9wdGlvbi1vbmUtb25lXCIpO1xubGV0IE9QMkJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3B0aW9uLW9uZS10d29cIik7XG5sZXQgT1AxU2NyZWVuRW5kID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5vcHRpb24tb25lLW9uZS1lbmRcIik7XG5sZXQgT1AyU2NyZWVuRW5kID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5vcHRpb24tb25lLXR3by1lbmRcIik7XG5sZXQgTmFtZUlucHV0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5uYW1lLWlucHV0XCIpO1xubGV0IE5hbWVCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm5hbWUtYnV0dG9uXCIpO1xubGV0IG9wVGV4dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3BlbmluZy10ZXh0XCIpO1xubGV0IFJlQnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXN0YXJ0LWJ1dHRvblwiKTtcblxuTmFtZUJ1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG4gICAgb3BUZXh0LmlubmVySFRNTCA9IGAke05hbWVJbnB1dC52YWx1ZX0gYXJlIHlvdSBhZnJhaWQgdG8gYW5zd2VyP2A7IFxufTtcblxuXG5CdXR0b24xLm9uY2xpY2sgPSBmdW5jdGlvbigpIHtcbiAgICBTdG9yeU9QLnN0eWxlLmRpc3BsYXkgPSBcIm5vbmVcIjtcbiAgICBTY3JlZW4xLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XG59O1xuXG5CdXR0b24yLm9uY2xpY2sgPSBmdW5jdGlvbigpIHtcbiAgICBTdG9yeU9QLnN0eWxlLmRpc3BsYXkgPSBcIm5vbmVcIjtcbiAgICBTY3JlZW4yLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XG59O1xuXG5PUDFCdXR0b24ub25jbGljayA9IGZ1bmN0aW9uKCkge1xuICAgIFNjcmVlbjEuc3R5bGUuZGlzcGxheSA9IFwibm9uZVwiO1xuICAgIE9QMVNjcmVlbkVuZC5zdHlsZS5kaXNwbGF5ID0gXCJibG9ja1wiO1xufTtcbk9QMkJ1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG4gICAgU2NyZWVuMS5zdHlsZS5kaXNwbGF5ID0gXCJub25lXCI7XG4gICAgT1AyU2NyZWVuRW5kLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XG59O1xuXG5SZUJ1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG4gICAgU3RvcnlPUC5zdHlsZS5kaXNwbGF5ID0gXCJibG9ja1wiO1xuICAgIFNjcmVlbjEuc3R5bGUuZGlzcGxheSA9IFwibm9uZVwiO1xuICAgIFNjcmVlbjIuc3R5bGUuZGlzcGxheSA9IFwibm9uZVwiO1xuICAgIE9QMVNjcmVlbkVuZC5zdHlsZS5kaXNwbGF5ID0gXCJub25lXCI7XG4gICAgT1AyU2NyZWVuRW5kLnN0eWxlLmRpc3BsYXkgPSBcIm5vbmVcIjtcbn07XG5cblxuXG5cblxuIl19</script></body></html>
